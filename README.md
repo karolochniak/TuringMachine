@@ -28,7 +28,7 @@ States are declared using `% <state_name>`. Below it, the transition rules are d
 `[read_symbol] [write_symbol] [direction (R/L)] [next_state]`
 
 *Example:*
-```text
+
 % q0
 0 0 R q0
 1 1 R q1
