@@ -28,41 +28,8 @@ States are declared using `% <state_name>`. Below it, the transition rules are d
 `[read_symbol] [write_symbol] [direction (R/L)] [next_state]`
 
 *Example:*
-
+```text
 % q0
 0 0 R q0
 1 1 R q1
 $ $ R acc
-
-
-🧩 Python Implementation Details
-The Turing class consists of several key methods handling the simulation:
-
-odczyt_pliku(): Parses the configuration text file and builds a nested dictionary of instructions (dict_instrukcje).
-
-modif_tasma(extend): Pads the initial input with $ symbols to simulate infinite memory on both ends of the tape.
-
-ruch_tasma(ob_znak): Calculates the new position of the read/write head based on the R (Right) or L (Left) instruction.
-
-odczyt_tasma(): The main execution loop. It reads the current symbol, looks up the transition rule, writes the new symbol, moves the head, and updates the state. The loop terminates when the state becomes either "acc" or "rej".
-
-konwersja_tasma_bis(): Cleans up the final tape by removing the padding symbols ($) before printing the final state.
-
-🚀 Execution
-Ensure you have Python 3 installed.
-
-Save your Turing machine rules in a file named podzielnosc3.txt in the same directory as the Python script.
-
-Run the script from the terminal:
-
-Bash
-python turing.py
-Expected Output
-For the input 110 (which is 6 in decimal), the machine will reach the acc state and output:
-
-Wynik na taśmie: 110
-Liczba jest podzielna przez 3
-For inputs not divisible by 3 (e.g., 100 -> 4), it will reach the rej state and output:
-
-Wynik na taśmie: 100
-Liczba NIE jest podzielna przez 3.
