@@ -1,0 +1,19 @@
+! input 110
+! start_state q0
+
+% q0
+0 0 R q0
+1 1 R q1
+$ $ R acc
+
+% q1
+0 0 R q2
+1 1 R q0
+$ $ R rej
+
+% q2
+0 0 R q1
+1 1 R q2
+$ $ R rej
+
+! Koniec
